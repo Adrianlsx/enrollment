@@ -8,10 +8,10 @@ services:
     buildCommand: ""
     startCommand: "apache2-foreground"
     env:
-      DB_HOST: "your_db_host"
-      DB_NAME: "your_db_name"
-      DB_USER: "your_db_user"
-      DB_PASS: "your_db_pass"
+      DB_HOST: "localhost"
+      DB_NAME: "student"
+      DB_USER: "adrian"
+      DB_PASS: ""
     healthCheck:
       path: /
       interval: 10s
