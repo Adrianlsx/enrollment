@@ -1,0 +1,9 @@
+version: 1
+services:
+  - type: web
+    name: my-php-app
+    env: docker
+    docker:
+      dockerfilePath: ./Dockerfile
+    buildCommand: ""
+    startCommand: "apache2-foreground"
