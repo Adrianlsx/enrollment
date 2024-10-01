@@ -7,3 +7,14 @@ services:
       dockerfilePath: ./Dockerfile
     buildCommand: ""
     startCommand: "apache2-foreground"
+    env:
+      DB_HOST: "your_db_host"
+      DB_NAME: "your_db_name"
+      DB_USER: "your_db_user"
+      DB_PASS: "your_db_pass"
+    healthCheck:
+      path: /
+      interval: 10s
+      timeout: 5s
+      healthyThreshold: 2
+      unhealthyThreshold: 3
