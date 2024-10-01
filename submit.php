@@ -1,9 +1,9 @@
 <?php
 // Database configuration
-$host = '127.0.0.1';
-$dbname = 'student';
-$username = 'adrian';
-$password = '';
+$host = getenv('DB_HOST'); // Use environment variable
+$dbname = getenv('DB_NAME');
+$username = getenv('DB_USER');
+$password = getenv('DB_PASS');
 
 // Create a connection
 $conn = new mysqli($host, $username, $password, $dbname);
@@ -77,46 +77,33 @@ $conn->close();
             <form action="" method="post">
                 <label for="student_name">Student Name:</label>
                 <input type="text" id="student_name" name="student_name" required>
-
                 <label for="phone_number">Phone Number:</label>
                 <input type="text" id="phone_number" name="phone_number" pattern="\d{11}" maxlength="11" required>
-
                 <label for="religion">Religion:</label>
                 <input type="text" id="religion" name="religion" required>
-
                 <label for="mothers_name">Mother's Name:</label>
                 <input type="text" id="mothers_name" name="mothers_name" required>
-
                 <label for="mothers_number">Mother's No.:</label>
                 <input type="text" id="mothers_number" name="mothers_number" pattern="\d{11}" maxlength="11" required>
-
                 <label for="fathers_name">Father's Name:</label>
                 <input type="text" id="fathers_name" name="fathers_name" required>
-
                 <label for="fathers_number">Father's No.:</label>
                 <input type="text" id="fathers_number" name="fathers_number" pattern="\d{11}" maxlength="11" required>
-
                 <label for="guardian_name">Guardian Name:</label>
                 <input type="text" id="guardian_name" name="guardian_name" required>
-
                 <label for="guardian_number">Guardian No.:</label>
                 <input type="text" id="guardian_number" name="guardian_number" pattern="\d{11}" maxlength="11" required>
-
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
-
                 <label for="lrn_number">LRN Number (12 digits):</label>
                 <input type="text" id="lrn_number" name="lrn_number" pattern="\d{12}" maxlength="12" required>
-
                 <label for="address">Address:</label>
                 <textarea id="address" name="address" required></textarea>
-
                 <label for="grade">Select Grade:</label>
                 <select id="grade" name="grade" required>
                     <option value="Grade 11">Grade 11</option>
                     <option value="Grade 12">Grade 12</option>
                 </select>
-
                 <label for="strand">Select Strand:</label>
                 <select id="strand" name="strand" required>
                     <option value="STEM">STEM</option>
@@ -124,7 +111,6 @@ $conn->close();
                     <option value="ABM">ABM</option>
                     <option value="HUMSS">HUMSS</option>
                 </select>
-
                 <div id="tvl-tracks" style="display:none;">
                     <label for="track">Select TVL Track:</label>
                     <select id="track" name="track">
@@ -132,10 +118,8 @@ $conn->close();
                         <option value="HE">HE</option>
                     </select>
                 </div>
-
                 <label for="date_of_birth">Date of Birth:</label>
                 <input type="date" id="date_of_birth" name="date_of_birth" required>
-
                 <input type="submit" value="Enroll">
             </form>
         </div>
